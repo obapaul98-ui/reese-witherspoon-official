@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Official Reese Sunshine Member Card — Personalized Fan Badge</title>
+  <meta name="description" content="Generate and download your official personalized digital Reese Witherspoon Sunshine Fan Club membership card." />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <style>
+    /* ── RESET ──────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── PAGE ───────────────────────────────────────── */
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Outfit', sans-serif;
+      color: #fff;
+      background:
+        radial-gradient(ellipse 80% 60% at 30% 20%, rgba(107,33,168,.25) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 50% at 70% 80%, rgba(192,38,211,.15) 0%, transparent 60%),
+        linear-gradient(170deg, #08060f 0%, #0d0820 40%, #120a2e 100%);
+      padding: 40px 16px;
+    }
+
+    /* ── CARD WRAPPER ──────────────────────────────── */
+    .card-outer {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 9 / 16;
+      border-radius: 28px;
+      padding: 3px;
+      background: conic-gradient(
+        from 45deg,
+        #FFD700, #B8860B, #FFD700, #DAA520, #FFD700, #B8860B, #FFD700
+      );
+      box-shadow:
+        0 0 30px rgba(255,215,0,.18),
+        0 0 80px rgba(107,33,168,.25),
+        0 30px 60px rgba(0,0,0,.6);
+      animation: card-enter .8s cubic-bezier(.4,0,.2,1) both;
+    }
+    @keyframes card-enter {
+      from { opacity: 0; transform: translateY(40px) scale(.96); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 25px;
+      overflow: hidden;
+      background: linear-gradient(168deg, #6B21A8 0%, #3b0e6e 25%, #1a0735 55%, #0a0318 100%);
+    }
+
+    /* ── RED CARPET & SUNSHINE MOTIFS ──────────────── */
+    .card-inner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        /* subtle curtain drape left */
+        radial-gradient(ellipse 35% 100% at -5% 50%, rgba(180,20,40,.06) 0%, transparent 70%),
+        /* subtle curtain drape right */
+        radial-gradient(ellipse 35% 100% at 105% 50%, rgba(180,20,40,.06) 0%, transparent 70%),
+        /* sunshine rays from top */
+        conic-gradient(from 0deg at 50% -10%,
+          transparent 0deg,
+          rgba(255,215,0,.03) 10deg,
+          transparent 20deg,
+          rgba(255,215,0,.02) 30deg,
+          transparent 40deg,
+          rgba(255,215,0,.03) 50deg,
+          transparent 60deg,
+          rgba(255,215,0,.02) 70deg,
+          transparent 80deg,
+          rgba(255,215,0,.03) 90deg,
+          transparent 100deg,
+          transparent 360deg
+        );
+      pointer-events: none;
+      z-index: 1;
+    }
+    .card-inner::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 40%;
+      background: linear-gradient(to top,
+        rgba(10,3,24,.9) 0%,
+        rgba(10,3,24,.4) 50%,
+        transparent 100%
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* ── CARD CONTENT ─────────────────────────────── */
+    .card-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 28px 24px 20px;
+    }
+
+    /* ── HEADER ───────────────────────────────────── */
+    .card-header {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .card-header-sun {
+      font-size: 1.8rem;
+      display: block;
+      margin-bottom: 4px;
+      filter: drop-shadow(0 0 8px rgba(255,215,0,.5));
+      animation: sun-pulse 3s ease-in-out infinite;
+    }
+    @keyframes sun-pulse {
+      0%,100% { filter: drop-shadow(0 0 8px rgba(255,215,0,.5)); transform: scale(1); }
+      50%     { filter: drop-shadow(0 0 16px rgba(255,215,0,.7)); transform: scale(1.06); }
+    }
+    .card-header-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      color: #FFD700;
+      text-shadow: 0 0 12px rgba(255,215,0,.35);
+      line-height: 1.25;
+    }
+    .card-header-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(255,215,0,.55);
+      margin-top: 3px;
+    }
+
+    /* ── ORNATE DIVIDER ──────────────────────────── */
+    .ornate-divider {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 80%;
+      margin: 10px auto 16px;
+    }
+    .ornate-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,215,0,.45), transparent);
+    }
+    .ornate-diamond {
+      font-size: .55rem;
+      color: #FFD700;
+      opacity: .7;
+    }
+
+    /* ── PHOTO FRAME ──────────────────────────────── */
+    .photo-frame-wrap {
+      position: relative;
+      width: 165px;
+      height: 165px;
+      margin-bottom: 14px;
+      flex-shrink: 0;
+    }
+    /* rotating ornate border */
+    .photo-frame-border {
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 2.5px dashed rgba(255,215,0,.5);
+      animation: spin-slow 30s linear infinite;
+    }
+    @keyframes spin-slow { to { transform: rotate(360deg); } }
+    /* golden ring */
+    .photo-frame-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 3px solid #FFD700;
+      box-shadow:
+        0 0 15px rgba(255,215,0,.3),
+        inset 0 0 15px rgba(255,215,0,.1);
+    }
+    /* inner circle */
+    .photo-circle {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(107,33,168,.3), rgba(26,7,53,.6));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: box-shadow .3s ease;
+      position: relative;
+    }
+    .photo-circle:hover {
+      box-shadow: 0 0 25px rgba(255,215,0,.25);
+    }
+    .photo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+    .photo-circle img.has-photo {
+      display: block;
+    }
+    .photo-placeholder {
+      text-align: center;
+      padding: 10px;
+    }
+    .photo-placeholder-icon {
+      font-size: 2.2rem;
+      display: block;
+      margin-bottom: 6px;
+      opacity: .6;
+    }
+    .photo-placeholder-text {
+      font-size: .62rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(255,215,0,.5);
+      line-height: 1.4;
+    }
+    .photo-circle.has-photo .photo-placeholder { display: none; }
+    .photo-hover-overlay {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: rgba(0,0,0,.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity .25s;
+      z-index: 3;
+      pointer-events: none;
+    }
+    .photo-circle:hover .photo-hover-overlay {
+      opacity: 1;
+    }
+    .photo-hover-overlay span {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #FFD700;
+    }
+    /* corner ornaments around photo */
+    .corner-ornament {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-color: rgba(255,215,0,.4);
+      border-style: solid;
+      z-index: 2;
+    }
+    .corner-tl { top: -12px; left: -12px; border-width: 2px 0 0 2px; border-radius: 4px 0 0 0; }
+    .corner-tr { top: -12px; right: -12px; border-width: 2px 2px 0 0; border-radius: 0 4px 0 0; }
+    .corner-bl { bottom: -12px; left: -12px; border-width: 0 0 2px 2px; border-radius: 0 0 0 4px; }
+    .corner-br { bottom: -12px; right: -12px; border-width: 0 2px 2px 0; border-radius: 0 0 4px 0; }
+
+    /* ── MEMBER INFO SECTION ──────────────────────── */
+    .member-info {
+      text-align: center;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+    .member-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: #fff;
+      text-shadow: 0 2px 12px rgba(0,0,0,.5);
+      margin-bottom: 4px;
+      line-height: 1.2;
+      letter-spacing: .02em;
+      min-height: 1.8em;
+      cursor: text;
+    }
+    .member-name[contenteditable]:focus {
+      outline: none;
+      border-bottom: 1px dashed rgba(255,215,0,.4);
+    }
+    .member-title-official {
+      font-family: 'Outfit', sans-serif;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: #FFD700;
+      text-shadow: 0 0 10px rgba(255,215,0,.3);
+      margin-bottom: 2px;
+    }
+    .member-title-exclusive {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.4);
+      margin-bottom: 12px;
+    }
+
+    /* detail rows */
+    .member-details {
+      width: 100%;
+      max-width: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 10px;
+    }
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(255,215,0,.08);
+    }
+    .detail-label {
+      font-size: .6rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255,215,0,.55);
+    }
+    .detail-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .78rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.75);
+      letter-spacing: .04em;
+    }
+    .detail-value.editable {
+      cursor: text;
+      padding: 1px 4px;
+      border-radius: 3px;
+      transition: background .2s;
+    }
+    .detail-value.editable:hover {
+      background: rgba(255,215,0,.06);
+    }
+    .detail-value.editable:focus {
+      outline: none;
+      background: rgba(255,215,0,.1);
+    }
+
+    /* ── HOLOGRAPHIC STRIP ────────────────────────── */
+    .holo-strip {
+      width: 85%;
+      height: 6px;
+      border-radius: 3px;
+      margin: 6px auto 10px;
+      background: linear-gradient(
+        90deg,
+        rgba(255,215,0,.15),
+        rgba(160,32,240,.2),
+        rgba(255,215,0,.25),
+        rgba(236,72,153,.15),
+        rgba(255,215,0,.15)
+      );
+      background-size: 200% 100%;
+      animation: holo-shift 4s linear infinite;
+    }
+    @keyframes holo-shift {
+      0%   { background-position: 0% 0%; }
+      100% { background-position: 200% 0%; }
+    }
+
+    /* ── SIGNATURE ────────────────────────────────── */
+    .signature-area {
+      text-align: center;
+      margin-top: auto;
+      padding-top: 6px;
+    }
+    .signature-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      font-weight: 300;
+      color: rgba(255,215,0,.35);
+      letter-spacing: .04em;
+    }
+    .signature-line {
+      width: 100px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,215,0,.25), transparent);
+      margin: 3px auto 0;
+    }
+    .signature-sub {
+      font-size: .5rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.2);
+      margin-top: 3px;
+    }
+
+    /* ── FLOATING STARS (inside card) ──────────── */
+    .floating-star {
+      position: absolute;
+      color: rgba(255,215,0,.12);
+      font-size: .6rem;
+      z-index: 1;
+      animation: twinkle 4s ease-in-out infinite;
+    }
+    .fs-1 { top: 12%; left: 8%; animation-delay: 0s; }
+    .fs-2 { top: 25%; right: 10%; animation-delay: 1.2s; font-size: .45rem; }
+    .fs-3 { top: 55%; left: 6%; animation-delay: 2.4s; }
+    .fs-4 { top: 70%; right: 7%; animation-delay: .8s; font-size: .5rem; }
+    .fs-5 { top: 42%; right: 14%; animation-delay: 1.8s; font-size: .4rem; }
+    .fs-6 { top: 85%; left: 12%; animation-delay: 3s; font-size: .35rem; }
+    @keyframes twinkle {
+      0%,100% { opacity: .3; transform: scale(1); }
+      50%     { opacity: 1; transform: scale(1.5); }
+    }
+
+    /* ── WATERMARK ────────────────────────────────── */
+    .watermark {
+      position: absolute;
+      bottom: 38%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Playfair Display', serif;
+      font-size: 4.5rem;
+      font-weight: 900;
+      color: rgba(255,215,0,.02);
+      white-space: nowrap;
+      z-index: 0;
+      pointer-events: none;
+      letter-spacing: .05em;
+    }
+
+    /* ── BUTTONS BELOW CARD ────────────────────────── */
+    .actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      max-width: 400px;
+      margin-top: 28px;
+      animation: card-enter .8s .3s cubic-bezier(.4,0,.2,1) both;
+    }
+    .btn-download {
+      width: 100%;
+      padding: 16px 24px;
+      background: linear-gradient(135deg, #FFD700 0%, #DAA520 50%, #B8860B 100%);
+      color: #1a0735;
+      font-family: 'Outfit', sans-serif;
+      font-size: .95rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(255,215,0,.25), 0 8px 24px rgba(0,0,0,.4);
+      transition: all .3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-download::after {
+      content: '';
+      position: absolute;
+      top: -50%; left: -75%;
+      width: 50%; height: 200%;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,.3), transparent);
+      transform: skewX(-20deg);
+      animation: shimmer 3.5s ease-in-out infinite;
+    }
+    @keyframes shimmer {
+      0%   { left: -75%; opacity: 0; }
+      20%  { opacity: 1; }
+      60%  { left: 125%; opacity: 1; }
+      61%  { opacity: 0; }
+      100% { left: 125%; opacity: 0; }
+    }
+    .btn-download:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 0 30px rgba(255,215,0,.4), 0 12px 32px rgba(0,0,0,.5);
+    }
+    .btn-download:active { transform: scale(.98); }
+
+    .btn-physical {
+      width: 100%;
+      padding: 15px 24px;
+      background: rgba(255,255,255,.04);
+      border: 1.5px solid rgba(255,215,0,.3);
+      color: #FFD700;
+      font-family: 'Outfit', sans-serif;
+      font-size: .9rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all .3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .btn-physical:hover {
+      background: rgba(255,215,0,.08);
+      border-color: rgba(255,215,0,.6);
+      transform: translateY(-1px);
+      box-shadow: 0 0 20px rgba(255,215,0,.12);
+    }
+    .btn-physical:active { transform: scale(.98); }
+
+    /* ── TOAST ────────────────────────────────────── */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: linear-gradient(135deg, #2E0F54, #17072E);
+      border: 1px solid rgba(255,215,0,.35);
+      color: #FFD700;
+      padding: 14px 28px;
+      border-radius: 100px;
+      font-size: .85rem;
+      font-weight: 600;
+      box-shadow: 0 8px 32px rgba(0,0,0,.5);
+      z-index: 999;
+      opacity: 0;
+      transition: all .4s cubic-bezier(.4,0,.2,1);
+      pointer-events: none;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ── HIDDEN FILE INPUT ────────────────────────── */
+    #photo-upload { display: none; }
+
+    /* ── RESPONSIVE ───────────────────────────────── */
+    @media (max-width: 440px) {
+      body { padding: 20px 12px; }
+      .card-outer { max-width: 340px; }
+      .card-content { padding: 22px 18px 16px; }
+      .card-header-title { font-size: 1rem; }
+      .photo-frame-wrap { width: 140px; height: 140px; margin-bottom: 12px; }
+      .member-name { font-size: 1.3rem; }
+    }
+    @media (max-width: 360px) {
+      .card-outer { max-width: 300px; }
+      .photo-frame-wrap { width: 120px; height: 120px; }
+      .member-name { font-size: 1.15rem; }
+      .card-content { padding: 18px 14px 14px; }
+    }
+  </style>
+  <!-- SEO, Entity Authority & Open Graph Optimization -->
+  <link rel="canonical" href="https://reesewitherspoonofficial.com/fan-card.html" />
+  <meta name="keywords" content="Reese Witherspoon fan card, Reese Witherspoon member badge, Reese Witherspoon Sunshine Fan Club" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="author" content="Reese Witherspoon Official Team" />
+  <meta name="publisher" content="Reese Witherspoon Official Site" />
+  <meta name="language" content="English" />
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:site_name" content="Reese Witherspoon Official Site" />
+  <meta property="og:title" content="Official Reese Sunshine Member Card — Personalized Fan Badge" />
+  <meta property="og:description" content="Generate and download your official personalized digital Reese Witherspoon Sunshine Fan Club membership card." />
+  <meta property="og:image" content="https://reesewitherspoonofficial.com/reesewitherspoon/reesewitherspoon_1579478144_2225146406606465542_367315644.jpg" />
+  <meta property="og:url" content="https://reesewitherspoonofficial.com/fan-card.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@ReeseW" />
+  <meta name="twitter:creator" content="@ReeseW" />
+  <meta name="twitter:title" content="Official Reese Sunshine Member Card — Personalized Fan Badge" />
+  <meta name="twitter:description" content="Generate and download your official personalized digital Reese Witherspoon Sunshine Fan Club membership card." />
+  <meta name="twitter:image" content="https://reesewitherspoonofficial.com/reesewitherspoon/reesewitherspoon_1579478144_2225146406606465542_367315644.jpg" />
+
+  <!-- Structured Data JSON-LD Schemas -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Official Reese Sunshine Member Card",
+  "about": {
+    "@id": "https://reesewitherspoonofficial.com/#person"
+  }
+}
+</script>
+</head>
+<body>
+
+  <!-- Hidden file input for photo upload -->
+  <input type="file" id="photo-upload" accept="image/*"/>
+
+  <!-- ── CARD ─────────────────────────────────── -->
+  <div class="card-outer" id="membership-card">
+    <div class="card-inner">
+
+      <!-- Floating decorative stars -->
+      <span class="floating-star fs-1">✦</span>
+      <span class="floating-star fs-2">✦</span>
+      <span class="floating-star fs-3">✦</span>
+      <span class="floating-star fs-4">✦</span>
+      <span class="floating-star fs-5">✦</span>
+      <span class="floating-star fs-6">✦</span>
+
+      <!-- Watermark -->
+      <div class="watermark">SUNSHINE</div>
+
+      <div class="card-content">
+
+        <!-- HEADER -->
+        <div class="card-header">
+          <span class="card-header-sun">☀️</span>
+          <div class="card-header-title">Reese Sunshine<br/>Fan Club</div>
+          <div class="card-header-sub">Est. 2026 · Official Membership</div>
+        </div>
+
+        <!-- ORNATE DIVIDER -->
+        <div class="ornate-divider">
+          <div class="ornate-line"></div>
+          <span class="ornate-diamond">◆</span>
+          <div class="ornate-line"></div>
+        </div>
+
+        <!-- PHOTO FRAME -->
+        <div class="photo-frame-wrap">
+          <div class="photo-frame-border"></div>
+          <div class="photo-frame-ring"></div>
+          <div class="corner-ornament corner-tl"></div>
+          <div class="corner-ornament corner-tr"></div>
+          <div class="corner-ornament corner-bl"></div>
+          <div class="corner-ornament corner-br"></div>
+          <div class="photo-circle" id="photo-circle">
+            <img id="photo-preview" src="" alt="Member Photo"/>
+            <div class="photo-placeholder" id="photo-placeholder">
+              <span class="photo-placeholder-icon">📷</span>
+              <span class="photo-placeholder-text">Tap to Upload<br/>Member Photo</span>
+            </div>
+            <div class="photo-hover-overlay"><span>Change Photo</span></div>
+          </div>
+        </div>
+
+        <!-- MEMBER INFO -->
+        <div class="member-info">
+          <div class="member-name" id="member-name" contenteditable="true" spellcheck="false">[YOUR NAME HERE]</div>
+          <div class="member-title-official">✦ Official Member ✦</div>
+          <div class="member-title-exclusive">Exclusive Fan Club Member</div>
+
+          <div class="member-details">
+            <div class="detail-row">
+              <span class="detail-label">Member ID</span>
+              <span class="detail-value" id="member-id">RS-000000-2026</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Address</span>
+              <span class="detail-value editable" id="member-address" contenteditable="true" spellcheck="false">[City, Country]</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Issued</span>
+              <span class="detail-value" id="member-issued">[MM/DD/YYYY]</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Expiry</span>
+              <span class="detail-value" id="member-expiry">[MM/DD/YYYY]</span>
+            </div>
+          </div>
+
+          <!-- Holographic strip -->
+          <div class="holo-strip"></div>
+
+          <!-- Signature -->
+          <div class="signature-area">
+            <div class="signature-text">Reese Witherspoon</div>
+            <div class="signature-line"></div>
+            <div class="signature-sub">Founder · Hello Sunshine</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ACTION BUTTONS ───────────────────────── -->
+  <div class="actions">
+    <button class="btn-download" id="btn-download" type="button">
+      📥 Download as PNG
+    </button>
+    <button class="btn-physical" id="btn-physical" type="button">
+      🎫 Get Your Physical Card
+    </button>
+  </div>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    /* ── Auto-populate dates & Member ID ──────────── */
+    (function initCard() {
+      const now = new Date();
+      const pad = n => String(n).padStart(2, '0');
+      const issued = `${pad(now.getMonth()+1)}/${pad(now.getDate())}/${now.getFullYear()}`;
+      const expiry = new Date(now);
+      expiry.setFullYear(expiry.getFullYear() + 1);
+      const expiryStr = `${pad(expiry.getMonth()+1)}/${pad(expiry.getDate())}/${expiry.getFullYear()}`;
+
+      document.getElementById('member-issued').textContent = issued;
+      document.getElementById('member-expiry').textContent = expiryStr;
+
+      // Generate random member ID
+      const randNum = Math.floor(100000 + Math.random() * 900000);
+      document.getElementById('member-id').textContent = `RS-${randNum}-2026`;
+
+      // Check if we have member data from join.html
+      try {
+        const saved = JSON.parse(localStorage.getItem('sunshine_fan_member'));
+        if (saved) {
+          document.getElementById('member-name').textContent = saved.name || '[YOUR NAME HERE]';
+          if (saved.memberId) {
+            document.getElementById('member-id').textContent = saved.memberId;
+          }
+          if (saved.photo && saved.photo !== 'null') {
+            const img = document.getElementById('photo-preview');
+            img.src = saved.photo;
+            img.classList.add('has-photo');
+            document.getElementById('photo-circle').classList.add('has-photo');
+          }
+        }
+      } catch(e) {}
+    })();
+
+    /* ── Photo Upload ────────────────────────────── */
+    const photoCircle = document.getElementById('photo-circle');
+    const photoUpload = document.getElementById('photo-upload');
+    const photoPreview = document.getElementById('photo-preview');
+
+    photoCircle.addEventListener('click', () => photoUpload.click());
+
+    photoUpload.addEventListener('change', function() {
+      const file = this.files[0];
+      if (!file || !file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = e => {
+        photoPreview.src = e.target.result;
+        photoPreview.classList.add('has-photo');
+        photoCircle.classList.add('has-photo');
+        showToast('✨ Photo uploaded successfully!');
+      };
+      reader.readAsDataURL(file);
+    });
+
+    /* ── Download as PNG ─────────────────────────── */
+    document.getElementById('btn-download').addEventListener('click', async () => {
+      const btn = document.getElementById('btn-download');
+      btn.textContent = '⏳ Generating...';
+      btn.disabled = true;
+
+      try {
+        // temporarily hide interactive cursors/outlines
+        document.querySelectorAll('[contenteditable]').forEach(el => {
+          el.blur();
+          el.style.cursor = 'default';
+        });
+
+        const card = document.getElementById('membership-card');
+        const canvas = await html2canvas(card, {
+          scale: 3,
+          useCORS: true,
+          backgroundColor: null,
+          logging: false,
+          borderRadius: 28
+        });
+
+        const link = document.createElement('a');
+        link.download = 'reese-sunshine-fan-card.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+
+        showToast('🎉 Card downloaded as PNG!');
+      } catch(err) {
+        console.error(err);
+        showToast('⚠️ Download failed. Try again.');
+      } finally {
+        btn.innerHTML = '📥 Download as PNG';
+        btn.disabled = false;
+        document.querySelectorAll('[contenteditable]').forEach(el => {
+          el.style.cursor = 'text';
+        });
+      }
+    });
+
+    /* ── Get Physical Card ───────────────────────── */
+    document.getElementById('btn-physical').addEventListener('click', () => {
+      showToast('📬 Physical card ordering coming soon!');
+    });
+
+    /* ── Toast Notification ──────────────────────── */
+    let toastTimer;
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    /* ── Clear placeholder on focus ──────────────── */
+    document.querySelectorAll('[contenteditable]').forEach(el => {
+      const original = el.textContent;
+      el.addEventListener('focus', () => {
+        if (el.textContent === original || el.textContent.startsWith('[')) {
+          el.textContent = '';
+        }
+      });
+      el.addEventListener('blur', () => {
+        if (!el.textContent.trim()) {
+          el.textContent = original;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

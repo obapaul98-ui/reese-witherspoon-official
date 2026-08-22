@@ -1,0 +1,79 @@
+/* about.css */
+
+/* ── PAGE HERO ──────────────────────────────────────────── */
+.orb-1{position:absolute;width:500px;height:500px;background:rgba(124,58,237,.3);border-radius:50%;filter:blur(80px);top:-100px;left:-80px;pointer-events:none;animation:orb-drift 14s ease-in-out infinite;}
+.orb-2{position:absolute;width:350px;height:350px;background:rgba(236,72,153,.22);border-radius:50%;filter:blur(80px);bottom:0;right:5%;pointer-events:none;animation:orb-drift 10s ease-in-out infinite 2s;}
+@keyframes orb-drift{0%,100%{transform:translate(0,0)}33%{transform:translate(20px,-30px)}66%{transform:translate(-15px,20px)}}
+
+.about-hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;padding-top:20px;}
+.about-hero-text h1{margin-top:14px;}
+.about-portrait{width:100%;max-width:460px;border-radius:var(--radius-lg);object-fit:cover;object-position:top center;box-shadow:0 40px 100px rgba(0,0,0,.6);}
+.ap-glow{position:absolute;bottom:-60px;left:50%;transform:translateX(-50%);width:360px;height:360px;background:radial-gradient(circle,rgba(236,72,153,.35) 0%,transparent 65%);filter:blur(50px);z-index:-1;}
+.about-hero-img{position:relative;}
+
+/* ── TIMELINE ───────────────────────────────────────────── */
+.timeline-wrap{position:relative;margin-top:56px;}
+.timeline-wrap::before{content:'';position:absolute;left:120px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--purple),var(--pink),transparent);}
+.timeline-item{display:grid;grid-template-columns:120px 32px 1fr;gap:0 24px;align-items:start;margin-bottom:36px;}
+.ti-year{font-size:.95rem;font-weight:800;color:var(--pink-2);text-align:right;padding-top:18px;letter-spacing:.04em;}
+.ti-dot{width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--pink));margin-top:22px;box-shadow:0 0 12px rgba(236,72,153,.5);flex-shrink:0;}
+.ti-card{padding:22px 28px;}
+.ti-featured .ti-card{background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(236,72,153,.08));border-color:rgba(168,85,247,.25);}
+.ti-title{font-size:1.1rem;font-weight:700;margin-bottom:10px;}
+.ti-desc{font-size:.9rem;color:var(--muted);line-height:1.75;}
+.ti-badge{margin-top:14px;display:inline-block;padding:5px 14px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.3);border-radius:100px;font-size:.75rem;font-weight:700;color:#fcd34d;}
+
+/* ── BIO GRID ───────────────────────────────────────────── */
+.bio-grid{display:grid;grid-template-columns:1.4fr .6fr;gap:60px;align-items:start;}
+.bio-sidebar{display:flex;flex-direction:column;gap:14px;}
+.sidebar-card{padding:18px 22px;}
+.sc-title{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--pink-2);margin-bottom:6px;}
+.sidebar-card p{font-size:.9rem;color:var(--muted);line-height:1.6;}
+
+/* ── SKILLS ─────────────────────────────────────────────── */
+#skills{background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(124,58,237,.08) 0%,transparent 70%);}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;}
+.skill-item{padding:32px;transition:transform .35s,box-shadow .35s;}
+.skill-item:hover{transform:translateY(-5px);box-shadow:0 20px 60px rgba(124,58,237,.2);}
+.skill-icon{font-size:2.4rem;margin-bottom:16px;}
+.skill-name{font-size:1.05rem;font-weight:700;margin-bottom:10px;}
+.skill-desc{font-size:.875rem;color:var(--muted);line-height:1.7;margin-bottom:18px;}
+.skill-level{height:4px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden;}
+.skill-bar{height:100%;background:linear-gradient(90deg,var(--purple),var(--pink));border-radius:4px;width:0;transition:width 1.2s 0.3s var(--ease);}
+.skill-item.revealed .skill-bar{/* animated via JS */}
+
+/* ── AWARDS ─────────────────────────────────────────────── */
+#awards{position:relative;overflow:hidden;}
+.awards-bg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(245,158,11,.09) 0%,transparent 70%);pointer-events:none;}
+.awards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px;}
+.award-card{padding:32px 28px;text-align:center;transition:transform .35s,box-shadow .35s;}
+.award-card:hover{transform:translateY(-5px);box-shadow:0 20px 60px rgba(245,158,11,.15);}
+.award-icon{font-size:2.8rem;margin-bottom:14px;}
+.award-name{font-size:1rem;font-weight:800;margin-bottom:8px;}
+.award-project{font-size:.85rem;color:var(--muted);line-height:1.5;}
+
+/* ── PHILANTHROPY ───────────────────────────────────────── */
+.philan-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+.philan-cards{display:flex;flex-direction:column;gap:14px;}
+.pc-item{display:flex;align-items:center;gap:16px;padding:20px 24px;}
+.pc-icon{font-size:2rem;flex-shrink:0;}
+.pc-name{font-size:.95rem;font-weight:700;}
+.pc-role{font-size:.8rem;color:var(--muted);margin-top:3px;}
+
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+@media(max-width:1024px){
+  .about-hero-grid{grid-template-columns:1fr;}
+  .bio-grid{grid-template-columns:1fr;}
+  .skills-grid{grid-template-columns:repeat(2,1fr);}
+  .awards-grid{grid-template-columns:repeat(2,1fr);}
+  .philan-grid{grid-template-columns:1fr;}
+  .timeline-wrap::before{left:80px;}
+  .timeline-item{grid-template-columns:80px 28px 1fr;}
+}
+@media(max-width:640px){
+  .skills-grid{grid-template-columns:1fr;}
+  .awards-grid{grid-template-columns:1fr 1fr;}
+  .timeline-item{grid-template-columns:60px 24px 1fr;}
+  .timeline-wrap::before{left:60px;}
+  .ti-year{font-size:.8rem;}
+}

