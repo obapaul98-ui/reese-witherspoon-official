@@ -55,14 +55,24 @@
   </url>
   <url>
     <loc>https://reesewitherspoonofficial.com/join.html</loc>
-    <lastmod>2026-08-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://reesewitherspoonofficial.com/reesewitherspoon/reesewitherspoon_1579478144_2225146406606465542_367315644.jpg</image:loc>
+      <image:title>Reese Witherspoon Fan Club</image:title>
+      <image:caption>Official Reese Witherspoon Fan Club registration, member perks, and fan community.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://reesewitherspoonofficial.com/fan-card.html</loc>
-    <lastmod>2026-08-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://reesewitherspoonofficial.com/wallpaper-pack-preview.png</image:loc>
+      <image:title>Reese Witherspoon Fan Card</image:title>
+      <image:caption>Official personalized digital Reese Witherspoon Fan Card and membership badge.</image:caption>
+    </image:image>
   </url>
 </urlset>

